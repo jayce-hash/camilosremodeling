@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camilo's Remodeling Company | Tyler, TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --red: #c0392b;
+    --gold: #c9952a;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --dark: #111827;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --star: #c9952a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--dark);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(26,39,68,0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+    border-bottom: 3px solid var(--red);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo-text span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 9px 20px !important;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: #a93226 !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-stripes {
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 60px,
+        rgba(192,57,43,0.06) 60px,
+        rgba(192,57,43,0.06) 62px
+      );
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,149,42,0.12) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 140px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-eyebrow-line {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .hero-eyebrow-text {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.72);
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 16px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  .btn-primary:hover { background: #a93226; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 16px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Logo display in hero */
+  .hero-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-logo-badge {
+    position: relative;
+    width: 320px;
+    height: 320px;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--red);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .trust-item svg { flex-shrink: 0; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 40px; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--red);
+  }
+
+  .section-label-text {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--red);
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+
+  .services-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+
+  .services-desc {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray);
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: #eee8d8; }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    color: var(--navy);
+  }
+
+  .service-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+
+  /* ── WHY US ── */
+  #about { background: var(--navy); }
+
+  #about .section-title { color: var(--white); }
+  #about .section-label-text { color: var(--gold); }
+  #about .section-label-line { background: var(--gold); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-text {
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.72);
+    font-weight: 300;
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .stat {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+  }
+
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feature-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .feature-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .feature-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .feature-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--cream); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 28px; }
+
+  .contact-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .contact-value a {
+    color: var(--navy);
+    text-decoration: none;
+  }
+
+  .contact-value a:hover { color: var(--red); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+    margin-top: 8px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--gray);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .hours-row .day { font-weight: 500; color: var(--navy); }
+  .hours-row.closed .time { color: var(--red); }
+
+  /* Contact Form */
+  .contact-form {
+    background: var(--white);
+    padding: 48px;
+    border-top: 4px solid var(--red);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  }
+
+  .form-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+
+  .form-group label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1.5px solid #ddd;
+    padding: 12px 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    color: var(--dark);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--navy);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover { background: var(--red); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d1626;
+    padding: 48px 40px 24px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 24px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .footer-brand-tag {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .footer-brand-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .footer-col-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .angies-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+
+  /* mobile */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      padding: 120px 20px 60px;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero h1 { font-size: 42px; }
+    .hero-logo-badge { width: 200px; height: 200px; }
+    .hero-logo-wrap { order: -1; }
+    .hero-btns { justify-content: center; }
+    .hero-eyebrow { justify-content: center; }
+
+    .services-intro { grid-template-columns: 1fr; gap: 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .trust-bar { gap: 24px; }
+    section { padding: 60px 20px; }
+    .section-title { font-size: 32px; }
+    .contact-form { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <!-- Inline mini-logo mark -->
+    <svg class="nav-logo-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="42" height="42" fill="#1a2744"/>
+      <!-- house shape -->
+      <polygon points="21,6 36,18 36,36 6,36 6,18" fill="none" stroke="#c9952a" stroke-width="2"/>
+      <polygon points="21,6 36,18 6,18" fill="#c0392b" opacity="0.85"/>
+      <!-- door -->
+      <rect x="17" y="24" width="8" height="12" fill="#c9952a"/>
+      <!-- star -->
+      <text x="21" y="15" font-size="7" fill="white" text-anchor="middle" font-family="serif">★</text>
+    </svg>
+    <div class="nav-logo-text">
+      Camilo's Remodeling
+      <span>Tyler, Texas</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:9035399580" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-stripes"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Tyler, Texas · Est. &amp; Trusted</span>
+      </div>
+      <h1>Camilo's<br><em>Remodeling</em><br>Company</h1>
+      <p class="hero-sub">Quality You Can See · Craft You Can Trust</p>
+      <p class="hero-desc">Serving Tyler and East Texas with pride — from kitchens and bathrooms to full home transformations. Every project is personal. Every detail is done right.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+        <a href="tel:9035399580" class="btn-secondary">903.539.9580</a>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <!-- MAIN LOGO SVG -->
+      <svg class="hero-logo-badge" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- outer ring -->
+        <circle cx="160" cy="160" r="155" fill="#0d1626" stroke="#c9952a" stroke-width="3"/>
+        <circle cx="160" cy="160" r="143" fill="none" stroke="rgba(201,149,42,0.25)" stroke-width="1"/>
+
+        <!-- stars ring decoration -->
+        <g fill="#c9952a" opacity="0.7">
+          <text font-size="10" font-family="serif" text-anchor="middle">
+            <textPath href="#ring-path">★ · · ★ · · ★ · · ★ · · ★ · · ★ · · ★ · · ★ · · ★ · · ★ · · ★ · · ★ · ·</textPath>
+          </text>
+        </g>
+        <defs>
+          <path id="ring-path" d="M160,20 a140,140 0 1,1 -0.01,0" />
+        </defs>
+
+        <!-- background shape -->
+        <circle cx="160" cy="160" r="125" fill="#1a2744"/>
+
+        <!-- American flag accent top-right -->
+        <clipPath id="circle-clip">
+          <circle cx="160" cy="160" r="124"/>
+        </clipPath>
+        <g clip-path="url(#circle-clip)">
+          <!-- red stripes top -->
+          <rect x="160" y="36" width="124" height="10" fill="#c0392b" opacity="0.6"/>
+          <rect x="160" y="56" width="124" height="10" fill="#c0392b" opacity="0.4"/>
+          <rect x="160" y="76" width="124" height="10" fill="#c0392b" opacity="0.2"/>
+          <!-- blue canton -->
+          <rect x="160" y="36" width="60" height="50" fill="#1a2744"/>
+          <!-- stars in canton -->
+          <text x="170" y="56" fill="white" font-size="9" font-family="serif">★★★</text>
+          <text x="175" y="69" fill="white" font-size="9" font-family="serif">★★</text>
+          <text x="170" y="82" fill="white" font-size="9" font-family="serif">★★★</text>
+        </g>
+
+        <!-- house icon -->
+        <polygon points="160,72 220,115 220,190 100,190 100,115" fill="#c0392b" opacity="0.15"/>
+        <polygon points="160,72 220,115 100,115" fill="#c0392b"/>
+        <polygon points="160,72 220,115 220,190 100,190 100,115" fill="none" stroke="#c9952a" stroke-width="2.5"/>
+        <!-- chimney -->
+        <rect x="195" y="80" width="12" height="28" fill="#c9952a"/>
+        <!-- door -->
+        <rect x="147" y="155" width="26" height="35" fill="#c9952a"/>
+        <circle cx="160" cy="172" r="2" fill="#1a2744"/>
+        <!-- window left -->
+        <rect x="105" y="130" width="24" height="20" fill="none" stroke="#c9952a" stroke-width="2"/>
+        <line x1="117" y1="130" x2="117" y2="150" stroke="#c9952a" stroke-width="1"/>
+        <line x1="105" y1="140" x2="129" y2="140" stroke="#c9952a" stroke-width="1"/>
+        <!-- window right -->
+        <rect x="191" y="130" width="24" height="20" fill="none" stroke="#c9952a" stroke-width="2"/>
+        <line x1="203" y1="130" x2="203" y2="150" stroke="#c9952a" stroke-width="1"/>
+        <line x1="191" y1="140" x2="215" y2="140" stroke="#c9952a" stroke-width="1"/>
+
+        <!-- ground line -->
+        <line x1="80" y1="190" x2="240" y2="190" stroke="#c9952a" stroke-width="2"/>
+
+        <!-- Divider -->
+        <line x1="90" y1="210" x2="230" y2="210" stroke="rgba(201,149,42,0.4)" stroke-width="1"/>
+
+        <!-- Company name -->
+        <text x="160" y="235" font-family="'Oswald', sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">CAMILO'S</text>
+        <text x="160" y="253" font-family="'Oswald', sans-serif" font-size="11" font-weight="400" fill="#c9952a" text-anchor="middle" letter-spacing="3">REMODELING CO.</text>
+        <line x1="90" y1="263" x2="230" y2="263" stroke="rgba(201,149,42,0.4)" stroke-width="1"/>
+        <text x="160" y="277" font-family="'Barlow', sans-serif" font-size="10" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="2">TYLER · TEXAS</text>
+
+        <!-- lone star -->
+        <text x="160" y="60" font-size="16" fill="#c9952a" text-anchor="middle" font-family="serif">★</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    Licensed &amp; Insured
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Angie's List Verified
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Free Estimates
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Family-Owned Business
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-intro">
+      <div>
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span class="section-label-text">What We Do</span>
+        </div>
+        <h2 class="section-title">Full-Service<br><em>Remodeling</em></h2>
+      </div>
+      <p class="services-desc">From a single room refresh to a complete home transformation, Camilo's brings decades of hands-on craftsmanship to every project in Tyler and East Texas. No job too big, no detail too small.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="6" y="18" width="36" height="24" rx="1"/>
+          <path d="M6 18l18-12 18 12"/>
+          <rect x="18" y="28" width="12" height="14"/>
+        </svg>
+        <div class="service-name">Kitchen Remodeling</div>
+        <p class="service-desc">Custom cabinets, countertops, flooring, and full kitchen gut-and-rebuild. Your dream kitchen, built to last.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="10" y="14" width="28" height="28" rx="1"/>
+          <path d="M10 20h28"/>
+          <circle cx="32" cy="10" r="4"/>
+          <path d="M28 10h-14a4 4 0 0 0-4 4"/>
+        </svg>
+        <div class="service-name">Bathroom Renovation</div>
+        <p class="service-desc">Tile work, vanities, showers, bathtubs, and complete bathroom makeovers with precision and style.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="32" width="40" height="12"/>
+          <path d="M8 32V16l16-10 16 10v16"/>
+          <rect x="18" y="22" width="12" height="10"/>
+        </svg>
+        <div class="service-name">Home Additions</div>
+        <p class="service-desc">Room additions, garage conversions, and expansions — increasing your home's footprint and value.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="6" y="6" width="36" height="36" rx="2"/>
+          <path d="M6 20h36M6 34h36M20 6v36M34 6v36"/>
+        </svg>
+        <div class="service-name">Flooring</div>
+        <p class="service-desc">Hardwood, tile, laminate, and vinyl installation and refinishing throughout your home.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 36 L18 12 L24 24 L30 18 L42 36"/>
+          <rect x="6" y="36" width="36" height="6"/>
+        </svg>
+        <div class="service-name">Interior & Exterior</div>
+        <p class="service-desc">Painting, drywall, siding, trim work, and all the finishing touches that make a house feel complete.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="24" cy="20" r="10"/>
+          <path d="M24 30v12M18 42h12"/>
+          <path d="M14 14l-4-4M34 14l4-4M14 26l-4 4M34 26l4 4"/>
+        </svg>
+        <div class="service-name">General Contracting</div>
+        <p class="service-desc">Full project management from concept to completion — your single point of contact for any remodel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">
+          <div class="section-label-line" style="background:var(--gold)"></div>
+          <span class="section-label-text">Why Camilo's</span>
+        </div>
+        <h2 class="section-title" style="color:white">Built on <em style="color:var(--gold)">Integrity</em><br>&amp; Hard Work</h2>
+        <p class="about-text">Camilo Zumarraga has built his reputation one project at a time, right here in Tyler, Texas. When you hire Camilo's, you're not getting a crew you've never met — you're getting a craftsman who shows up, does the work, and stands behind every nail and tile.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">20+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Satisfaction Focus</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">★★★★★</div>
+            <div class="stat-label">Angie's List Rated</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-features">
+        <div class="feature-row">
+          <div class="feature-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="feature-name">Licensed &amp; Fully Insured</div>
+            <div class="feature-desc">Your home is protected. We carry all required licensing and insurance for your complete peace of mind.</div>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="feature-name">On-Time, On-Budget</div>
+            <div class="feature-desc">We respect your schedule and your wallet. Transparent quotes, no surprise costs, no delays.</div>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <div>
+            <div class="feature-name">Family-Owned &amp; Local</div>
+            <div class="feature-desc">Rooted in Tyler, TX. We live here, work here, and take pride in making our community's homes beautiful.</div>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div class="feature-name">Angie's List Verified</div>
+            <div class="feature-desc">Reviewed, vetted, and trusted by homeowners across East Texas through Angie's List.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">
+      <div class="section-label-line"></div>
+      <span class="section-label-text">Get In Touch</span>
+    </div>
+    <h2 class="section-title">Let's Build<br><em>Something Great</em></h2>
+
+    <div class="contact-grid" style="margin-top:48px">
+      <div class="contact-info">
+        <div class="contact-block">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">2606 Old Gladewater Hwy<br>Tyler, TX 75702</div>
+          </div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.55 5.55l1.59-1.59a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">
+              <a href="tel:9035939936">903.593.9936</a> <span style="font-size:13px;color:#999">home</span><br>
+              <a href="tel:9035399580">903.539.9580</a> <span style="font-size:13px;color:#999">cell</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:CamiloZumarraga@hotmail.com">CamiloZumarraga@hotmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-block" style="align-items:flex-start">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div style="flex:1">
+            <div class="contact-label">Business Hours</div>
+            <div class="hours-grid">
+              <div class="hours-row"><span class="day">Mon</span><span class="time">9:00 AM – 5:00 PM</span></div>
+              <div class="hours-row"><span class="day">Tue</span><span class="time">9:00 AM – 5:00 PM</span></div>
+              <div class="hours-row"><span class="day">Wed</span><span class="time">9:00 AM – 5:00 PM</span></div>
+              <div class="hours-row"><span class="day">Thu</span><span class="time">9:00 AM – 5:00 PM</span></div>
+              <div class="hours-row"><span class="day">Fri</span><span class="time">9:00 AM – 5:00 PM</span></div>
+              <div class="hours-row"><span class="day">Sat</span><span class="time">9:00 AM – 5:00 PM</span></div>
+              <div class="hours-row closed"><span class="day">Sun</span><span class="time">Closed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">Request a Free Estimate</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(903) 555-0000">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Type of Project</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Kitchen Remodeling</option>
+            <option>Bathroom Renovation</option>
+            <option>Home Addition</option>
+            <option>Flooring</option>
+            <option>Interior / Exterior Work</option>
+            <option>General Contracting</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Your Project</label>
+          <textarea placeholder="Describe your project, timeline, or any questions you have..."></textarea>
+        </div>
+        <button class="form-submit" onclick="alert('Thank you! Camilo\'s team will be in touch shortly.')">Send My Request ★</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Camilo's Remodeling Co.</div>
+      <div class="footer-brand-tag">Tyler, Texas</div>
+      <p class="footer-brand-desc">Quality craftsmanship, honest pricing, and a commitment to excellence — serving East Texas homeowners with pride.</p>
+      <div class="angies-badge" style="margin-top:16px">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Angie's List Verified
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Kitchen Remodeling</a></li>
+        <li><a href="#services">Bathroom Renovation</a></li>
+        <li><a href="#services">Home Additions</a></li>
+        <li><a href="#services">Flooring</a></li>
+        <li><a href="#services">Interior &amp; Exterior</a></li>
+        <li><a href="#services">General Contracting</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:9035399580">Cell: 903.539.9580</a></li>
+        <li><a href="tel:9035939936">Home: 903.593.9936</a></li>
+        <li><a href="mailto:CamiloZumarraga@hotmail.com">CamiloZumarraga@hotmail.com</a></li>
+        <li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:8px">2606 Old Gladewater Hwy<br>Tyler, TX 75702</li>
+        <li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px">Mon–Sat: 9:00 AM – 5:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Camilo's Remodeling Company. Tyler, Texas. All rights reserved.</span>
+    <span>Built with Texas Pride ★</span>
+  </div>
+</footer>
+
+</body>
+</html>
